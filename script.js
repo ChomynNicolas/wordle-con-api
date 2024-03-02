@@ -94,7 +94,7 @@ const letrasPintadas = [];
   
   GRID.appendChild(ROW);
   if (intentos == 0) {
-    terminar("<h1>PERDISTE ! la palabra era ("+palabra+")</h1>");
+    terminar("<h1>PERDISTE ! La palabra era "+palabra+"</h1>");
     JUGAR.style.display = "block";
     PRESION.style.display = "none";
     leyenda.style.color = "#00f4ff";
