@@ -74,5 +74,10 @@ button:active {
   border: none;
   border-radius: 3px;
   display: none;
+
+}
+#error{
+  margin: auto;
+  width: 350px;
 }
 

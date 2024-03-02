@@ -4,7 +4,18 @@ let resAnt;
 //es la palabra, quedo del codigo anterior donde tenia palabras de mas de 5 letras y por eso estoy controlando
 //el programa con esta variable adicional
 let numPal = 5;
-
+let diccionario = [
+  "pisar",
+  "manco",
+  "SABER",
+  "andar",
+  "PALAU",
+  "ASIes",
+  "asado",
+];
+const palabraR =
+  diccionario[Math.floor(Math.random() * diccionario.length)].toUpperCase();
+let palabra;
 fetch("https://random-word-api.herokuapp.com/word?&&length=5&&lang=es")
   .then((response) => response.json())
   .then((response) => {
@@ -15,7 +26,7 @@ fetch("https://random-word-api.herokuapp.com/word?&&length=5&&lang=es")
     
   })
   .catch((err) => console.log("error"));
-  
+    palabra= palabraR;
 
 
 const PRESION = document.getElementById("guess-button");
@@ -94,7 +105,10 @@ const letrasPintadas = [];
   
   GRID.appendChild(ROW);
   if (intentos == 0) {
-    terminar("<h1>PERDISTE ! La palabra era "+palabra+"</h1>");
+    terminar("<h1>PERDISTE !</h1>");
+    error.innerHTML = "<h1>La palabra es "+palabra+"</h1>";
+    error.style = "color: #037113";
+    error.style.backgroundColor= "#050019"
     JUGAR.style.display = "block";
     PRESION.style.display = "none";
     leyenda.style.color = "#00f4ff";
